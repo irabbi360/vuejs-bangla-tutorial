@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue Js Bangla Tutorial</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body>
+	<div class="container" id="app" style="margin-top: 30px;">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header"><h1>Vue Js Bangla Tutorial</h1></div>
+
+                <div class="card-body">
+                    {{ message }}<br>
+                    <div class="form-group">
+                    	<label>Enter Name</label>
+                    <input type="text" class="form-control" v-model="name"><br>
+                    {{ name }}
+                </div>
+                    <div class="form-group">
+                    	<label>Select Country</label>
+                    	<select class="form-control" v-model="country">
+                    		<option value="" selected="">select one</option>
+                    		<option value="Bangladesh">Bangladesh</option>
+                    		<option value="India">India</option>
+                    	
+                    	</select><br>
+                    	{{ country}}
+                    </div>
+
+                    <div class="form-group">
+				    <div class="col-sm-2">Skill's</div>
+				    <div class="col-sm-10">
+				      <div class="form-check">
+				        <input class="form-check-input" type="checkbox" value="HTML" v-model="skill" id="HTML">
+				        <label class="form-check-label" for="gridCheck1">
+				          HTML
+				        </label>
+				        
+				      </div>
+				      <div class="form-check">
+				        <input class="form-check-input" type="checkbox" value="CSS" v-model="skill" id="css">
+				        <label class="form-check-label" for="gridCheck1">
+				          CSS
+				        </label>
+				       
+				      </div>
+				      <div class="form-check">
+				        <input class="form-check-input" type="checkbox" value="VUE" v-model="skill" id="vue">
+				        <label class="form-check-label" for="gridCheck1">
+				          Vue JS
+				        </label><br>
+				        {{ skill }}
+				      </div>
+				    </div>
+				  </div>
+
+				<div class="form-check">
+		          <input class="form-check-input" type="radio" name="gridRadios" id="Male" value="male" v-model="gender">
+		          <label class="form-check-label" for="Male">
+		            Male
+		          </label>
+		        </div>
+		        <div class="form-check">
+		          <input class="form-check-input" type="radio" name="gridRadios" id="Female" value="female" v-model="gender">
+		          <label class="form-check-label" for="Female">
+		            Female
+		          </label><br>
+		          {{ gender }}
+		        </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+	
+<script src="vue.js"></script>
+<script type="text/javascript">
+	var app = new Vue({
+		el: "#app",
+		data: {
+			message: 'Hello Vue!',
+			name:'',
+			country:'',
+			skill:[],
+			gender:'',
+		}
+	});
+</script>
+</body>
+</html>
