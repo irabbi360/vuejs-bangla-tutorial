@@ -11,9 +11,22 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header"><h1>Vue Js Bangla Tutorial</h1></div>
-
+					<ul class="nav nav-tabs">
+					  <li class="nav-item">
+					    <a class="nav-link" v-bind:class="{active:isActive}" href="#">Active</a>
+					  </li>
+					  <li class="nav-item">
+					    <a class="nav-link" href="#">Link</a>
+					  </li>
+					  <li class="nav-item">
+					    <a class="nav-link" href="#">Link</a>
+					  </li>
+					  <li class="nav-item">
+					    <a class="nav-link disabled" href="#">Disabled</a>
+					  </li>
+					</ul>
                 <div class="card-body">
-                    {{ message }}<br>
+              
                     <div class="form-group">
                     	<label>Enter Name</label>
                     <input type="text" class="form-control" v-model="name"><br>
@@ -72,6 +85,14 @@
 		        </div>
 
                 </div>
+
+                <div class="text-success" v-bind:class="{'text-danger':hasError}">This is class binding example</div>
+
+              <div class="card-footer text-muted">
+			   <a v-bind:href="facebook.url" :title="facebook.title">{{ facebook.name }} </a>
+			   <a :href="youtube.url" :title="youtube.title">{{ youtube.name }} </a>
+			  </div>
+
             </div>
         </div>
     </div>
@@ -82,11 +103,19 @@
 	var app = new Vue({
 		el: "#app",
 		data: {
+			isActive:false,
+			hasError:true,
 			message: 'Hello Vue!',
 			name:'',
 			country:'',
 			skill:[],
 			gender:'',
+			facebook:{
+				name:'Facebook', title:'Tech Bangla School Facebook', url:'http://facebook.com'
+			},
+			youtube:{
+				name:'Youtube', title:'Tech Bangla School Youtube', url:'http://youtube.com/TechBanglaSchool'
+			}
 		}
 	});
 </script>
