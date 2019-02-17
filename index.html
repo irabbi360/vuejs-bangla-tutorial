@@ -13,7 +13,7 @@
                 <div class="card-header"><h1>Vue Js Bangla Tutorial</h1></div>
 					<ul class="nav nav-tabs">
 					  <li class="nav-item">
-					    <a class="nav-link" v-bind:class="{active:isActive}" href="#">Active</a>
+					    <a class="nav-link" v-bind:class="{active:isActive}" href="#">Home</a>
 					  </li>
 					  <li class="nav-item">
 					    <a class="nav-link" href="#">Link</a>
@@ -88,6 +88,8 @@
 
                 <div class="text-success" v-bind:class="{'text-danger':hasError}">This is class binding example</div>
 
+                <div v-bind:style="styleObj">This is inline style binding example</div>
+
               <div class="card-footer text-muted">
 			   <a v-bind:href="facebook.url" :title="facebook.title">{{ facebook.name }} </a>
 			   <a :href="youtube.url" :title="youtube.title">{{ youtube.name }} </a>
@@ -103,7 +105,12 @@
 	var app = new Vue({
 		el: "#app",
 		data: {
-			isActive:false,
+			styleObj:{
+				color:'green',
+				background:'black',
+				fontSize:'40px',
+			},
+			isActive:true,
 			hasError:true,
 			message: 'Hello Vue!',
 			name:'',
